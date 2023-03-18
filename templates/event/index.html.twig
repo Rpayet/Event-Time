@@ -39,7 +39,7 @@
                             <div class="card-body">
                                 <h1 class="card-title">{{event.name}}</h1>
                                 <p class="card-subtitle">{{event.description}}</p>
-                                <p class="card-text">Du 05/09/2022 à 09h02 au 07/09/2022 à 09h02</p>
+                                <p class="card-text">Du {{ event.dateStart.format('d/m/Y à H:i') }} au {{ event.dateEnd.format('d/m/Y à H:i') }}</p>
                                 <div class="d-flex flex-row align-items-center">
                                     <a class="d-inline-block btn btn-primary" href="">Voir</a>
                                     <p class="bg-success text-white rounded p-1 m-2 card-text">statut</p>
