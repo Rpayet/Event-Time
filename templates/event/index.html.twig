@@ -4,4 +4,56 @@
 
 {% block body %}
 
+    <div class="w-75 m-auto text-center">
+
+        <div>
+
+            <form class="input-group w-50 m-auto mt-5" method="get" action="">
+
+                <input type="search" class="form-control rounded" placeholder="Recherche..." name="search" value="{{ app.request.get('search') }}"/>
+                <button type="submit" class="btn btn-secondary">Recherche</button>
+
+            </form>
+
+        </div>
+
+        <div>
+
+            <h1 class="mt-5 fs-2 fw-bold" >
+                Événements
+                <img style="width: 50px" class="" src="{{ asset('img/checkmark.png') }}" alt="checkmark">    
+            </h1>
+            
+            {# @todo - Nombre d'événement à venir dynamique #}
+            <p>3 événements à venir</p>
+        </div>
+
+        <section class="">
+
+            <div class="row" >
+
+                {% for i in 1..8 %}
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card text-start">
+                            <div class="card-body">
+                                <h1 class="card-title">Concert {{i}}</h1>
+                                <p class="card-subtitle">Lorem Ipsum</p>
+                                <p class="card-text">Du 05/09/2022 à 09h02 au 07/09/2022 à 09h02</p>
+                                <div class="d-flex flex-row align-items-center">
+                                    <a class="d-inline-block btn btn-primary" href="">Voir</a>
+                                    <p class="bg-success text-white rounded p-1 m-2 card-text">statut</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+    </div>
+
 {% endblock %}

@@ -4,4 +4,20 @@
 
 {% block body %}
 
+    <div class="w-75 m-auto text-center">
+
+        <form class="input-group w-50 m-auto mt-5" method="get" action="">
+
+        <input type="search" class="form-control rounded" placeholder="Recherche..." name="search" value="{{ app.request.get('search') }}"/>
+        <button type="submit" class="btn btn-secondary">Recherche</button>
+
+        </form>
+
+        <h1 class="mt-5 fs-2 fw-bold" >Bienvenue sur Event Time</h1>
+
+        <a class="btn btn-secondary mt-5" href="{{ path('app_event')}}">Voir la liste des évènements</a>
+
+    </div>
+
+
 {% endblock %}
