@@ -12,7 +12,7 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        for ($i = 0; $i > 8; $i++) {
+        for ($i = 0; $i < 8; $i++) {
             $event = new Event();
             $event->setName('Concert '. $i);
             $event->setDescription('Lorem Poue Pouet');
