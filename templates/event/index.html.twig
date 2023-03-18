@@ -37,9 +37,9 @@
                     <div class="col-md-3 mb-4">
                         <div class="card text-start">
                             <div class="card-body">
-                                <h1 class="card-title">{{event.name}}</h1>
-                                <p class="card-subtitle">{{event.description}}</p>
-                                <p class="card-text">Du {{ event.dateStart.format('d/m/Y à H:i') }} au {{ event.dateEnd.format('d/m/Y à H:i') }}</p>
+                                <h1 class="card-title fs-3 fw-bold">{{event.name}}</h1>
+                                <p class="card-text fs-5">{{event.description}}</p>
+                                <p class="card-subtitle fs-7">Du {{ event.dateStart.format('d/m/Y à H:i') }} au {{ event.dateEnd.format('d/m/Y à H:i') }}</p>
                                 <div class="d-flex flex-row align-items-center">
                                     <a class="d-inline-block btn btn-primary" href="">Voir</a>
                                     <p class="bg-success text-white rounded p-1 m-2 card-text">statut</p>
