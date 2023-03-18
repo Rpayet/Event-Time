@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\EventRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert; 
 
 #[ORM\Entity(repositoryClass: EventRepository::class)]
 class Event
@@ -15,21 +16,31 @@ class Event
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Entrez un nom d\'événement.')]
     private ?string $name = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank(message: 'Entrez une description.')]
+    #[Assert\Length(min: 2, minMessage: 'Description de 2 caractères minimum')]
     private ?string $description = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank(message: 'Entrez un prix compris entre 10 et 50 euros.')]
+    #[Assert\Positive]
+    #[Assert\Range(min: 10, max: 50, notInRangeMessage: 'Le prix doit être compris entre 10 et 50 euros.')]
     private ?int $price = null;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $publishedAt = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\NotBlank]
+    #[Assert\DateTime]
     private ?\DateTimeInterface $dateStart = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\NotBlank]
+    #[Assert\DateTime]
     private ?\DateTimeInterface $dateEnd = null;
 
     #[ORM\Column(length: 255)]
