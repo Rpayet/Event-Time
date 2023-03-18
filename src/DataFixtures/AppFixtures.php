@@ -20,7 +20,7 @@ class AppFixtures extends Fixture
         for ($i = 1; $i < 9; $i++) {
             $event = new Event();
             $event->setName($faker->groupName());
-            $event->setDescription('Lorem Poue Pouet');
+            $event->setDescription($faker->text(25));
             $event->setPrice(rand(10,50));
             $event->setPublishedAt(new DateTimeImmutable('now'));
             $event->setDateStart( new DateTime('+ 1 day'));
