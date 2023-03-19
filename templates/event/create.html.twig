@@ -4,14 +4,17 @@
 
 {% block body %}
 
-<div>
-    <h1>Ajouter un événement</h1>
+<div class="w-75 m-auto text-center">
+    <h1 class="mt-5 fs-2 fw-bold">Ajouter un événement</h1>
 
-    {{form_start(form)}}
+    <div class="form-group">
+        {{form_start(form)}}
+
             {{form_widget(form)}}
-            <button formnovalidate>Ajouter</button>
+            <button class="btn btn-primary" formnovalidate>Ajouter</button>
 
-    {{form_end(form)}}
+        {{form_end(form)}}
 
+    </div>
 </div>
 {% endblock %}
